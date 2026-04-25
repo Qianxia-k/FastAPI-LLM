@@ -17,12 +17,12 @@
     - 支持会话完整的上下文同步与持久化。
   - 应用会话摘要与对话缓存实现对话历史的自动化摘要与压缩机制，有效管控长对话场景下的 Token 消耗与上下文滑窗。
 ## 基于 LangChain 架构的检索增强生成（RAG）
-  -构建本地高性能向量知识库，基于 Chroma 实现新闻文本向量化存储与高效相似性检索。
-  -严格从系统数据库中读取真实新闻数据进行检索增强，从源头避免大模型幻觉问题，确保模型回答真实、准确、可溯源。
-  -基于 LangChain 完整封装 RAG 全流程 pipeline，包括文档分块、向量化、向量检索、提示词工程与大模型生成，实现新闻领域精准问答与信息总结。
+  - 构建本地高性能向量知识库，基于 Chroma 实现新闻文本向量化存储与高效相似性检索。
+  - 严格从系统数据库中读取真实新闻数据进行检索增强，从源头避免大模型幻觉问题，确保模型回答真实、准确、可溯源。
+  - 基于 LangChain 完整封装 RAG 全流程 pipeline，包括文档分块、向量化、向量检索、提示词工程与大模型生成，实现新闻领域精准问答与信息总结。
 
 ## 其他
-- ** 严酷的数据契约与安全**：全面使用 Pydantic V2 进行严格的请求与响应 Schema 校验；设计了统一的网关级响应协议，严格隔离 ORM 内部模型与外部 API 暴露的数据，确保敏感信息（如密码哈希等）零泄露。
+- **严酷的数据契约与安全**：全面使用 Pydantic V2 进行严格的请求与响应 Schema 校验；设计了统一的网关级响应协议，严格隔离 ORM 内部模型与外部 API 暴露的数据，确保敏感信息（如密码哈希等）零泄露。
 - **完善的业务闭环**：除了 AI 能力，系统还提供了规范的 RESTful API，涵盖基于 JWT 的用户鉴权、新闻分类获取、阅读历史追踪与文章收藏模块。
 - **开箱即用的前端页面**：包含一个使用 Vue 3 + Pinia 构建的直观前端界面（SPA），完整对接了后端的 SSE 接口与各项业务，便于演示真实应用效果。
 
@@ -75,7 +75,7 @@ pip install -r requirements.txt
 在 `backend` 目录下创建或检查环境变量文件 `.env`，并填入你的大模型 API Key（以 DashScope 为例）：
 ```ini
 DASHSCOPE_API_KEY=your_dashscope_api_key_here
-DATABASE_URL=sqlite+aiosqlite:///./news.db
+DATABASE_URL=mysql+aiomysql://root:yourmysqlpassword@localhost:3306/yourdatabasename?charset=utf8mb4
 ```
 **配置数据库**
 ```bash
