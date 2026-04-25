@@ -1,0 +1,78 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# =========================
+# Backend runtime files
+# =========================
+backend/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+backend/**/*.pyd
+backend/**/*.db
+backend/**/*.sqlite
+backend/**/*.sqlite3
+
+# =========================
+# Jupyter Notebook 自动生成的检查点
+# =========================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*.nbp
+
+# =========================
+# 异常文件名 / 垃圾文件
+# =========================
+=*
+*=*
+backend/=*
+
+# =========================
+# Environment variables / secrets
+# =========================
+.env
+.env.local
+.env.*.local
+
+# Keep template env files
+!.env.example
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Optional: model/data artifacts
+# =========================
+data/
